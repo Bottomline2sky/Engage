@@ -1,0 +1,46 @@
+.container {
+  width: 500px;
+  background-color: #ddd;
+  margin: 50px auto;
+
+}
+
+
+label {
+      margin-right: 150px;
+}
+
+input {
+  width: 250px;
+  height: 30px;
+
+}
+.submit-btn {
+  padding: 5px;
+  font-size: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.default {
+  margin-left: 10px;
+  color: navy;
+  cursor:  pointer;
+}
+h1 {
+    text-align: center;
+}
+ select {
+     width: 250px;
+     height: 30px;
+   text-align: right;
+ }
+  div div {
+      margin: 15px 5px;
+      text-align: right;
+  }
+  .confirm-password-input label {
+       margin-right: 100px;
+  }
+ .warnings{
+        text-align: center;
+ }
