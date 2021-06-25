@@ -1,0 +1,32 @@
+.nav-list {
+      display: flex;
+    justify-content: space-between;
+     list-style: none;
+      font-size:  30px;
+    margin: 0;
+  padding: 0;
+
+}
+.nav-item {
+  width: 33.3vw;
+  background-color: #ddd;
+}
+.nav-link {
+      padding: 20px 10px;
+  text-decoration: none;
+}
+.spacing {
+      background-color:  #fff;
+       width:  10px;
+        float: right;
+           height: 100%;
+}
+.dev-nav {
+      position: fixed;
+      top: 0;
+      margin-left: 0;
+
+}
+.fixed-assertion{
+    margin-top: 33.75px;
+}

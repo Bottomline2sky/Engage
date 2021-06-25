@@ -1,0 +1,81 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <h1 class="heading">Your Profile</h1>
+  <div class="image-section" [ngStyle]="{'background-image': 'url(' + imageUrl +')'}"></div>
+    <form class="info-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+       <div class="sections">
+         <label for="name">Name</label>
+         <input type="text" class="name-field" formControlName="name">
+       </div>
+     <div class="sections">
+       <label for="about">About</label>
+       <input type="text" class="about-field" formControlName="about">
+     </div>
+      <div class="sections">
+        <label for="education">Education</label>
+          <div class="btn-div">
+         <button class="edu-button" (click)="onAddSchool()" type="button">Add Fields</button>
+          </div>
+        <div class="school-fields" formArrayName="education">
+              <div class="school" *ngFor="let edu of getEducations(); let i=index" [formGroupName]="i">
+                <label for="year">Year</label>
+                <input type="text" class="year-field" formControlName="year">
+                <label for="institute"  class="ins-label">Institute</label>
+                <input type="text" class="ins-name" formControlName="school">
+                <span class="del-wrapper"><button class="del-button" type="button"
+                  (click)="onDelSchool(i)"><i class="far fa-trash-alt"></i></button></span>
+              </div>
+           </div>
+      </div>
+         <div class="sections">
+           <label for="skills">Skills</label>
+           <div class="skills">
+                  <div class="btn-div">
+             <button type="button" class="edu-button" (click)="onAddSkill()">Add Skills</button>
+                  </div>
+                <div class="skills-select" formArrayName="skills">
+                  <div class="skill-wrapper"
+                       *ngFor="let sk of getSkills();let p=index" [formGroupName]="p">
+                      <div>
+                     <div class="skill-field">
+                       <label for="">{{p+1}}: Select Skill</label>
+                  <select name="skills" formControlName="skill" class="skill-select">
+                    <option value="" *ngFor="let skill of skills;let j=index"
+                             [value]="j">{{skill}}</option>
+                  </select>
+                     </div>
+                     <div class="value-field">
+                       <label for="">Select Intensity</label>
+                       <input type="range" min="1" max="10" formControlName="value">
+                     </div>
+                      </div>
+                    <div class="del-skill-wrapper">
+                    <button class="del-button" type="button"
+                            (click)="onDelSkill(p)"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                     </div>
+                </div>
+           </div>
+         </div>
+      <div class="sections">
+        <label for="experience">Experiences</label>
+          <div class="experience">
+              <div class="btn-div">
+                <button class="edu-button" type="button" (click)="onAddExperience()">Add Experience</button>
+              </div>
+            <div class="school-fields" formArrayName="experience">
+              <div class="school" *ngFor="let expr of getExperience();let i=index" [formGroupName]="i">
+                <label for="year">Year</label>
+                <input type="text" class="year-field" formControlName="year">
+                <label for="institute"  class="ins-label" >Company</label>
+                <input type="text" class="ins-name" formControlName="company">
+                <span class="del-wrapper"><button class="del-button" type="button"
+            (click)="onDelExpr(i)"><i class="far fa-trash-alt"></i></button></span>
+              </div>
+           </div>
+          </div>
+      </div>
+       <div class="sub-btn-wrapper">
+         <button type="submit" class="sub-btn">Save Changes</button>
+       </div>
+    </form>
+</div>

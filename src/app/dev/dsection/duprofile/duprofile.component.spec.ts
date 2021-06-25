@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DjobApplyComponent } from './djob-apply.component';
+import { DuprofileComponent } from './duprofile.component';
 
-describe('DjobApplyComponent', () => {
-  let component: DjobApplyComponent;
-  let fixture: ComponentFixture<DjobApplyComponent>;
+describe('DuprofileComponent', () => {
+  let component: DuprofileComponent;
+  let fixture: ComponentFixture<DuprofileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DjobApplyComponent ]
+      declarations: [ DuprofileComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DjobApplyComponent);
+    fixture = TestBed.createComponent(DuprofileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,129 @@
+.container{
+    margin-left: auto;
+      margin-right: auto;
+     width: 900px;
+     border: 2px solid red;
+   display: flex;
+  flex-direction: column;
+   align-items: center;
+}
+.heading {
+    font-size: 50px;
+   margin: 0;
+
+}
+
+.image-section {
+  width: 150px;
+  height: 150px;
+  border: 3px solid red;
+  border-radius:  50%;
+  background-position: center;
+  background-size: cover;
+}
+.info-form {
+     margin-top: 100px;
+      align-self: flex-start;
+       margin-left: 30px;
+
+}
+label {
+     font-size: 25px;
+}
+.sections {
+     margin-top: 50px;
+}
+.sections input {
+    margin-left: 20px;
+    border: none;
+    border-bottom: 2px solid rgb(205, 169, 169);
+    width: 600px;
+  font-size: 20px;
+}
+.sections input:focus {
+    outline: none;
+}
+.btn-div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.edu-button {
+    font-size: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.school .year-field {
+   width: 150px;
+}
+.school .ins-name {
+       width: 400px;
+}
+.ins-label {
+   margin-left: 50px;
+}
+.school {
+    margin-top: 50px;
+}
+.del-button {
+       font-size: 20px;
+       padding: 5px 10px;
+}
+ .del-button:hover {
+    cursor: pointer;
+ }
+.del-wrapper {
+   margin-left: 30px;
+}
+.sub-btn {
+     font-size: 20px;
+     padding: 10px 5px;
+     cursor: pointer;
+     background-color: #f00;
+       color: #fff;
+       border: none;
+    border-radius: 40px;
+}
+.sub-btn-wrapper{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.skill-wrapper {
+     margin-top: 30px;
+      border: 1px solid #ddd;
+     border-radius: 3px;
+       box-sizing: border-box;
+       display: flex;
+       justify-content: space-between;
+}
+
+.skill-field {
+     padding-top: 20px ;
+    padding-bottom: 20px;
+}
+.value-field {
+     padding-top: 5px;
+
+}
+.skill-select {
+     width: 300px;
+     height: 40px;
+      font-size: 20px;
+
+}
+.skill-field label {
+      margin-right: 10px;
+
+}
+.skill-field input:focus {
+        outline: none;
+}
+.value-field input {
+     width: 270px;
+}
+.del-skill-wrapper {
+    float: right;
+    margin-top: 20px;
+     margin-right: 20px;
+
+}
