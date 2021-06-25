@@ -1,10 +1,10 @@
 # Engage
 Enable Artificial Intelligent in recruitment to provide ease and selective and better recruitment to companies.
 
-#Motivation
+# Motivation
 Task Assignment in Avishkar 2020 Visit: https://avishkar.mnnit.ac.in/
 
-#Tech Specification
+# Tech Specification
 
 1. Angular for frontend
    
