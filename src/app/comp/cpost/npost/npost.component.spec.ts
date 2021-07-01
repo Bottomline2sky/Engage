@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CheaderComponent } from './cheader.component';
+import { NpostComponent } from './npost.component';
 
-describe('CheaderComponent', () => {
-  let component: CheaderComponent;
-  let fixture: ComponentFixture<CheaderComponent>;
+describe('NpostComponent', () => {
+  let component: NpostComponent;
+  let fixture: ComponentFixture<NpostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CheaderComponent ]
+      declarations: [ NpostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CheaderComponent);
+    fixture = TestBed.createComponent(NpostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

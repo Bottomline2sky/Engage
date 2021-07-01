@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CprofileComponent } from './cprofile.component';
+import { CmessagingComponent } from './cmessaging.component';
 
-describe('CprofileComponent', () => {
-  let component: CprofileComponent;
-  let fixture: ComponentFixture<CprofileComponent>;
+describe('CmessagingComponent', () => {
+  let component: CmessagingComponent;
+  let fixture: ComponentFixture<CmessagingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CprofileComponent ]
+      declarations: [ CmessagingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CprofileComponent);
+    fixture = TestBed.createComponent(CmessagingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

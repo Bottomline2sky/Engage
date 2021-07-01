@@ -1,0 +1,53 @@
+.job-desc {
+     width: 750px;
+     background-color: #ddd;
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 50px;
+}
+.wrapper {
+     padding: 10px 5px;
+}
+label {
+     font-size: 25px;
+}
+.jtitle {
+     margin-top: 15px;
+}
+.jtitle input {
+    height: 35px;
+     width:  98%;
+     font-size: 25px;
+}
+.jtitle textarea {
+  width:  98%;
+  font-size: 25px;
+    font-family: "Helvetica, Arial, sans-serif";
+}
+.jtitle select {
+     width:  98%;
+     font-size: 25px;
+}
+.sub-btn-wrapper {
+      margin-top: 30px;
+  margin-left: 20px;
+       padding-bottom: 50px;
+}
+.submit-btn-direct {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.submit-btn-direct span {
+   padding-left: 10px;
+}
+.job-heading {
+   text-align: center;
+}
+.heading {
+     font-size: 40px;
+
+}

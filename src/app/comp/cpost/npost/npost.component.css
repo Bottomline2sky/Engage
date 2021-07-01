@@ -1,0 +1,49 @@
+.post-card {
+   background-color: #fff;
+   border: 2px solid red;
+  border-radius: 10px;
+    width: 600px;
+  position: absolute;
+  top:  50px;
+  left: 30%;
+
+  padding: 10px;
+}
+.img-direct {
+    width: 580px;
+    height: 300px;
+}
+input[type=file] {
+    display: none;
+}
+.text-input-area {
+      border: none;
+       outline: none;
+        font-size: 20px;
+   width: 100%;
+     height: 100px;
+}
+.upload-btn-wrapper {
+     padding: 15px 8px;
+}
+.post-btn-wrapper {
+      margin-top: 20px;
+}
+.post-btn-direct {
+  font-size: 20px;
+  padding: 5px 10px;
+  background-color: #6b47b8;
+  color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+
+}
+.finish-btn-wrapper {
+    margin: 15px 10px;
+}
+.finish-btn-direct {
+     font-size: 20px;
+     padding: 5px 10px;
+     cursor: pointer;
+     border-radius: 10px;
+}

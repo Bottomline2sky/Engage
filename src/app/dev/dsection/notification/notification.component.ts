@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {toTitleCase} from 'codelyzer/util/utils';
+
 
 @Component({
   selector: 'app-notification',

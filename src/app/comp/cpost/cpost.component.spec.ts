@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CselectionComponent } from './cselection.component';
+import { CpostComponent } from './cpost.component';
 
-describe('CselectionComponent', () => {
-  let component: CselectionComponent;
-  let fixture: ComponentFixture<CselectionComponent>;
+describe('CpostComponent', () => {
+  let component: CpostComponent;
+  let fixture: ComponentFixture<CpostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CselectionComponent ]
+      declarations: [ CpostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CselectionComponent);
+    fixture = TestBed.createComponent(CpostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

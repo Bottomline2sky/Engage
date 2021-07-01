@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import {DprofileService} from '../dprofile.service';
+import {environment} from '../../../../environments/environment.prod';
 
 @Component({
   selector: 'app-duprofile',
@@ -7,7 +9,7 @@ import {FormArray, FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./duprofile.component.css']
 })
 export class DuprofileComponent implements OnInit {
-  imageUrl: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSztQS_0iZ6EV3Nd6zs6YcNmFB8c7ciapy1MA&usqp=CAU';
+  imageUrl: string ;
   profileForm: FormGroup = new FormGroup({
     'name' : new FormControl(null),
     'about': new FormControl(null),
@@ -23,11 +25,38 @@ export class DuprofileComponent implements OnInit {
 
 
 
-
-  constructor() { }
+   constructor(private dprofileService : DprofileService) { }
 
   ngOnInit(): void {
-  }
+        this.profileForm.patchValue({
+           'name' : this.dprofileService.dProfile.name,
+           'about' : this.dprofileService.dProfile.about
+        });
+         this.imageUrl = this.dprofileService.dProfile.pimage;
+           for(let edu of this.dprofileService.dProfile.education) {
+                let  tempGroup = new FormGroup({
+                       'year' : new FormControl(edu.year),
+                       'school' : new FormControl(edu.school)
+                  });
+             (<FormArray>this.profileForm.get('education')).push(tempGroup);
+           }
+
+           for(let skill of this.dprofileService.dProfile.skills) {
+                let tempGroup = new FormGroup({
+                    'skill' : new FormControl(skill.skill),
+                     'value' : new FormControl(skill.value)
+                }) ;
+             (<FormArray>this.profileForm.get('skills')).push(tempGroup);
+           }
+
+           for(let exper of  this.dprofileService.dProfile.experience) {
+          let tempGroup = new FormGroup({
+               'year' : new FormControl(exper.year),
+               'company' : new FormControl(exper.company)
+          });
+             (<FormArray>this.profileForm.get('experience')).push(tempGroup);
+           }
+    }
    // Education Field
    onAddSchool() {
     let addField = new FormGroup({
@@ -66,6 +95,7 @@ export class DuprofileComponent implements OnInit {
           'year' : new FormControl(null),
            'company' : new FormControl(null)
       });
+
      (<FormArray>this.profileForm.get('experience')).push(newExper);
 
    }
@@ -79,8 +109,8 @@ export class DuprofileComponent implements OnInit {
 
 
 
-  onSubmit() {
-    console.log(this.profileForm);
+  onSubmit( ) {
+
   }
 
 }

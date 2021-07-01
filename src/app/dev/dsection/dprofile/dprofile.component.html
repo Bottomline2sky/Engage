@@ -1,28 +1,35 @@
 <div class="container">
     <div class="bio-data">
        <div class="intro">
-          <div class="pimage" [ngStyle]="{'background-image': 'url(' + imageUrl +')'}">
+          <div class="pimage" [ngStyle]="{'background-image': 'url(' + drprofile.pimage +')'}">
           </div>
          <div class="pname">
-           <h1>{{ 'Raghvendra Mishra'}}</h1>
-           <p>Lorem ipsum dolor sit amet.</p>
+           <h1>{{drprofile.name}}</h1>
+           <p>{{drprofile.about}}</p>
             </div>
        </div>
-
-          <div class="edu-section">
-                 <h1>Education:</h1>
-          <p>1: Rnt Education Center</p>
-           <p>2:  Motilal Nehru National Institute of Technology , Allahabad</p>
+       <div class="edu-section">
+            <h1>Education:</h1>
+            <ol>
+              <li *ngFor="let edu of drprofile.education">
+                 <p>{{edu.school}} ({{edu.year}})</p>
+              </li>
+            </ol>
           </div>
-
-          <div class="skills-section">
+        <div class="skills-section">
             <h1>Skills</h1>
               <ol>
-               <li>Web Developement</li>
-             <li>Software Development</li>
-            <li>Ethical Hacking</li>
+               <li *ngFor="let skill of drprofile.skills">{{skills[+skill.skill]}} ({{ skill.value}})</li>
                </ol>
           </div>
+      <div class="edu-section">
+        <h1>Experience:</h1>
+        <ol>
+          <li *ngFor="let exper of drprofile.experience">
+            <p>{{exper.company}} ({{exper.year}})</p>
+          </li>
+        </ol>
+      </div>
 
 
     </div>

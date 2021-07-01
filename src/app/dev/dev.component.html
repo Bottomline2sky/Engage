@@ -1,12 +1,12 @@
 <nav class="dev-nav">
       <ul class="nav-list">
-        <li class="nav-item"><a href="#" class="nav-link">Profile</a>
+        <li class="nav-item"><a [routerLink]="['/dev']" class="nav-link">Profile</a>
           <div class="spacing"></div>
         </li>
-        <li class="nav-item"><a href="#" class="nav-link">Jobs</a>
+        <li class="nav-item"><a [routerLink]="['/dev/djobs']" class="nav-link">Jobs</a>
           <div class="spacing"></div>
         </li>
-        <li class="nav-item"><a href="#" class="nav-link">Tops</a>
+        <li class="nav-item"><a  [routerLink]="['/dev/dsearch']"  class="nav-link">Tops</a>
           <div class="spacing"></div>
         </li>
       </ul>
@@ -14,5 +14,5 @@
 
 <!--   This is  profile section-->
 <div class="fixed-assertion">
-<app-dsection></app-dsection>
+<router-outlet></router-outlet>
 </div>

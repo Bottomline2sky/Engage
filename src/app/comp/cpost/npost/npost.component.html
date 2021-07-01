@@ -1,0 +1,19 @@
+<div class="post-card">
+     <div class="finish-btn-wrapper">
+         <button class="finish-btn-direct" (click)="goBack()"><i class="fas fa-arrow-left"></i></button>
+     </div>
+    <div class="text-wrapper">
+      <textarea name="" id=""   placeholder="Write Here..."
+      class="text-input-area" #f1></textarea>
+    </div>
+     <div class="upload-btn-wrapper">
+       <button class="post-btn-direct" (click)="f.click()">Add Image</button>
+     </div>
+   <div class="img-wrapper">
+     <img [src]="imageUrl" alt="" class="img-direct">
+   </div>
+     <div class="post-btn-wrapper">
+      <button class="post-btn-direct" (click)="onSendPost(f1.value)">Send Post</button>
+     </div>
+  <input type="file" #f (change)="onImageUpload($event)">
+</div>

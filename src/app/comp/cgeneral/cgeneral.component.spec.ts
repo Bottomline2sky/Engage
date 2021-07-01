@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CjobsComponent } from './cjobs.component';
+import { CgeneralComponent } from './cgeneral.component';
 
-describe('CjobsComponent', () => {
-  let component: CjobsComponent;
-  let fixture: ComponentFixture<CjobsComponent>;
+describe('CgeneralComponent', () => {
+  let component: CgeneralComponent;
+  let fixture: ComponentFixture<CgeneralComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CjobsComponent ]
+      declarations: [ CgeneralComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CjobsComponent);
+    fixture = TestBed.createComponent(CgeneralComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

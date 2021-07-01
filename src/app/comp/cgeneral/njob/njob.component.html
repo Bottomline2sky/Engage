@@ -1,0 +1,60 @@
+<div class="job-desc">
+   <div class="job-heading">
+        <h1 class="heading">New Job</h1>
+   </div>
+  <form (ngSubmit)="onSubmit()"  #f="ngForm">
+    <div class="wrapper">
+      <label for="">Job Title:</label>
+       <div class="jtitle">
+         <input type="text" name="jtitle" ngModel>
+       </div>
+    </div>
+     <div class="wrapper">
+        <label>About the Challenge</label>
+        <div class="jtitle">
+          <textarea type="text" name="jabout" rows="4" ngModel></textarea>
+        </div>
+      </div>
+    <div class="wrapper">
+      <label for="">Deadline</label>
+      <div class="jtitle">
+        <input type="date"  name="jdeadline" ngModel>
+      </div>
+    </div>
+    <div class="wrapper">
+          <label>Eligibility</label>
+       <div class="jtitle">
+         <input type="text" name="eligibility" ngModel>
+       </div>
+    </div>
+        <div class="wrapper">
+          <label for="">Job Location</label>
+          <div class="jtitle">
+            <input type="text" name="location" ngModel>
+          </div>
+        </div>
+       <div class="wrapper">
+         <label for="">Skills</label>
+         <div class="jtitle">
+           <select name="skill" id="" ngModel multiple="true">
+             <option   *ngFor="let val of languageCode; let i=index"  [value]="val.val">{{val.skill}}</option>
+           </select>
+         </div>
+       </div>
+      <div class="wrapper">
+        <label for="">Qualification</label>
+         <div class="jtitle">
+           <input type="text" name="qualification" ngModel>
+         </div>
+      </div>
+       <div class="wrapper">
+         <label for="">Compensation</label>
+          <div class="jtitle">
+            <input type="nmber" name="compensation" ngModel>
+          </div>
+       </div>
+     <div class="submit-btn-wrapper">
+       <button class="submit-btn-direct" type="submit">Post And Notify Subscribers <span class="btn-icon"><i class="far fa-paper-plane"></i></span></button>
+     </div>
+  </form>
+</div>

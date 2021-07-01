@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DprofileModel} from '../dprofile.model';
+import {DprofileService} from '../dprofile.service';
 
 @Component({
   selector: 'app-dprofile',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dprofile.component.css']
 })
 export class DprofileComponent implements OnInit {
-  imageUrl: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSztQS_0iZ6EV3Nd6zs6YcNmFB8c7ciapy1MA&usqp=CAU';
-  constructor() { }
+    drprofile : DprofileModel;
+
+  skills: string[] = ['Web D', 'Software D' , 'Linux' ,'Data Science' , 'Java Script' , 'Java' , 'Python'];
+
+
+  constructor(
+    private dprofileService : DprofileService
+  ) { }
 
   ngOnInit(): void {
+     this.drprofile = this.dprofileService.dProfile;
   }
+
+
 
 }
