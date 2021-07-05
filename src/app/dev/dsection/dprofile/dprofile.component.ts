@@ -8,19 +8,22 @@ import {DprofileService} from '../dprofile.service';
   styleUrls: ['./dprofile.component.css']
 })
 export class DprofileComponent implements OnInit {
-    drprofile : DprofileModel;
+    dprofile : DprofileModel;
+    skills: string[] = ['Web D', 'Software D' , 'Linux' ,'Data Science' , 'Java Script' , 'Java' , 'Python'];
 
-  skills: string[] = ['Web D', 'Software D' , 'Linux' ,'Data Science' , 'Java Script' , 'Java' , 'Python'];
 
-
-  constructor(
+   constructor(
     private dprofileService : DprofileService
   ) { }
 
   ngOnInit(): void {
-     this.drprofile = this.dprofileService.dProfile;
+     this.dprofileService.profileEmit.subscribe((res: DprofileModel )=>{
+              if(res == null) {
+                    this.dprofileService.fetchProfile();
+              }
+              else  {
+                this.dprofile = res;
+              }
+     });
   }
-
-
-
 }

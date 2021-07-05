@@ -21,12 +21,21 @@ import { NotificationComponent } from './dev/dsection/notification/notification.
 import { MessagingComponent } from './dev/dsection/messaging/messaging.component';
 import { JdescComponent } from './dev/djobs/jdesc/jdesc.component';
 import {AppRoutingModule} from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { CpostComponent } from './comp/cpost/cpost.component';
 import { NpostComponent } from './comp/cpost/npost/npost.component';
 import { CgeneralComponent } from './comp/cgeneral/cgeneral.component';
 import { NjobComponent } from './comp/cgeneral/njob/njob.component';
 import { PjobsComponent } from './comp/cgeneral/pjobs/pjobs.component';
+import {DauthGuardService} from './auth/dlogin/dauth-guard.service';
+import {DuprofileDeactivateService} from './dev/dsection/duprofile/duprofile-deactivate.service';
+import {allInterceptors} from './allInterceptors.mentions';
+import { LoaderSpinnerComponent } from './loader-spinner/loader-spinner.component';
+import {DevInterceptorService} from './dev/dev-interceptor.service';
+
+
+
+
 
 
 
@@ -51,7 +60,8 @@ import { PjobsComponent } from './comp/cgeneral/pjobs/pjobs.component';
         NpostComponent,
         CgeneralComponent,
         NjobComponent,
-        PjobsComponent
+        PjobsComponent,
+        LoaderSpinnerComponent
     ],
   imports: [
     BrowserModule,
@@ -61,7 +71,19 @@ import { PjobsComponent } from './comp/cgeneral/pjobs/pjobs.component';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [DauthGuardService, DuprofileDeactivateService, {provide: HTTP_INTERCEPTORS, useClass: DevInterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
+
+
+
+
+
+
+
+
+
+
+
+
 export class AppModule { }

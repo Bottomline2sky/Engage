@@ -1,4 +1,9 @@
-<div class="container" xmlns="http://www.w3.org/1999/html">
+<div class="spin-loader" *ngIf="! dProfile">
+    <app-loader-spinner></app-loader-spinner>
+</div>
+
+
+<div class="container" xmlns="http://www.w3.org/1999/html" *ngIf="dProfile">
   <h1 class="heading">Your Profile</h1>
   <div class="image-section" [ngStyle]="{'background-image': 'url(' + imageUrl +')'}"></div>
     <form class="info-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">

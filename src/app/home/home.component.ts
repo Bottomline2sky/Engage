@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {DauthGuardService} from '../auth/dlogin/dauth-guard.service';
+import {DloginService} from '../auth/dlogin/dlogin.service';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +10,20 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, private dlogInService: DloginService) { }
 
   ngOnInit(): void {
   }
 
    logInDeveloper() {
-      this.router.navigate(['/dev']);
+       if(this.dlogInService.getToken() != null) {
+           this.router.navigate(['/dev']);
+       }
+       else {
+         this.router.navigate(['/dlogin']);
+       }
    }
    logInCompany() {
-     this.router.navigate(['/comp/cpost']);
+     this.router.navigate(['/clogin']);
    }
 }

@@ -19,16 +19,19 @@ import {NjobComponent} from './comp/cgeneral/njob/njob.component';
 import {CinfoComponent} from './comp/cgeneral/cinfo/cinfo.component';
 import {PjobsComponent} from './comp/cgeneral/pjobs/pjobs.component';
 import {CmessagingComponent} from './comp/cgeneral/cmessaging/cmessaging.component';
+import {DauthGuardService} from './auth/dlogin/dauth-guard.service';
+import {DuprofileDeactivateService} from './dev/dsection/duprofile/duprofile-deactivate.service';
+import {DlogInGuardService} from './dev/DlogIn-guard.service';
 
 
 const routes : Routes = [
   {path: '' , component: HomeComponent, pathMatch: 'full'},
-  {path: 'dev', component: DevComponent,
+  {path: 'dev',  canActivate: [DlogInGuardService],component: DevComponent,
     children: [
       { path: '' , component: DsectionComponent ,
         children : [
           {path: '' , component: DprofileComponent , pathMatch: 'full'},
-          {path: 'update-profile' , component: DuprofileComponent},
+          {path: 'update-profile' , component: DuprofileComponent, canDeactivate: [DuprofileDeactivateService]},
           {path: 'messaging' , component:  MessagingComponent},
           {path: 'notification' , component: NotificationComponent},
           {path: 'past-result' , component: PastresultComponent}

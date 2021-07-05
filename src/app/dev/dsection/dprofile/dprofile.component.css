@@ -19,3 +19,8 @@
        background-position: center;
        background-size: cover;
    }
+.spinner-loader {
+     position: absolute;
+    top: 30%;
+    left: 50%;
+}

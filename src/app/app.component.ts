@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DloginService} from './auth/dlogin/dlogin.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Engage';
+   constructor(private dloginService: DloginService) {
+        this.dloginService.retrieveLocalToken();
+   }
 }
