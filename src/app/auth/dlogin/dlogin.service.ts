@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment.prod';
 import {Injectable} from '@angular/core';
 import {map} from 'rxjs/operators';
+import {CloginService} from '../clogin/clogin.service';
 
 @Injectable({providedIn: 'root'})
 
@@ -24,7 +25,7 @@ export class DloginService  {
 
 
 
-       constructor(private http: HttpClient) {
+       constructor(private http: HttpClient ) {
        }
 
        getToken() {
@@ -49,6 +50,7 @@ export class DloginService  {
                  this.latestToken = res.logToken;
                   this.tokenValidity = res.validity;
                    this.saveTokenLocally(this.latestToken,this.tokenValidity);
+                     localStorage.removeItem('compData');
         }));
        }
 
@@ -59,6 +61,12 @@ export class DloginService  {
                        validity: validity
                  } ;
             localStorage.setItem('userData' , JSON.stringify(userData));
+       }
+
+       removeToken() {
+             this.latestToken = null;
+               this.tokenValidity = null;
+                 localStorage.removeItem('userData');
        }
 
 

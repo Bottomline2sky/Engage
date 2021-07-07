@@ -30,15 +30,24 @@ export class DprofileService {
            });
       }
 
-      updateProfile(nProfile: FormData) {
-          if(this.dProfile != null) return this.dProfile;
-           else {
-            return this.http.post<DprofileModel>(environment.apiUrl + "/devproute/update", nProfile).pipe(
+      updateProfile(nProfile: {
+        name: any,
+        education: any,
+        skills: any,
+        experience: any,
+        about: any
+      }) {
+        return this.http.post<DprofileModel>(environment.apiUrl + "/devproute/update", nProfile).pipe(
               tap(res => {
                 this.profileEmit.next(res);
-              }))
-          }
-     }
-
+              }));
+      }
+    updateImage(formData : FormData) {
+          return this.http.post<{image: string}>(environment.apiUrl+"/devprofile/create/image", formData).pipe(tap(res=>{
+                 this.dProfile.image = res.image;
+                     let nObject = { ... this.dProfile};
+                   this.profileEmit.next( nObject);
+          }));
+    }
 
 }

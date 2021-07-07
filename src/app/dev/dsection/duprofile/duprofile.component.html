@@ -5,8 +5,10 @@
 
 <div class="container" xmlns="http://www.w3.org/1999/html" *ngIf="dProfile">
   <h1 class="heading">Your Profile</h1>
+  <button class="img-btn" (click)="f.click()">
   <div class="image-section" [ngStyle]="{'background-image': 'url(' + imageUrl +')'}"></div>
-    <form class="info-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  </button>
+   <form class="info-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
        <div class="sections">
          <label for="name">Name</label>
          <input type="text" class="name-field" formControlName="name">
@@ -83,4 +85,5 @@
          <button type="submit" class="sub-btn">Save Changes</button>
        </div>
     </form>
+  <input type="file" accept="image/jpg , image/jpeg" #f (change)="uploadImage($event)">
 </div>

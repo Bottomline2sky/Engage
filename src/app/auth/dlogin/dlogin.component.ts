@@ -41,10 +41,12 @@ export class DloginComponent implements OnInit {
              email: this.logInData.value.email,
              password: this.logInData.value.password
         };
-         this.dloginService.toLogIn(logInData).subscribe(res=>{
+         this.dloginService.toLogIn(logInData).subscribe((res)=>{
               this.route.navigate(['/dev']);
-             console.log(res);
-          });
+
+          },error => {
+            console.log(error)
+         });
     }
    }
 

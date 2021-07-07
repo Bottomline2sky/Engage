@@ -1,16 +1,46 @@
-<div class="container">
+<div class="container" *ngIf="registered">
       <h1>Company LogIn</h1>
-       <form>
+       <form (ngSubmit)="onSubmit()" #f="ngForm">
              <div class="email-input">
             <label for="email">Email</label>
-               <input type="email">
+               <input type="email" name="email" ngModel required email="">
              </div>
            <div class="password-input">
              <label for="password">Password</label>
-             <input type="text">
+             <input type="text" name="password" ngModel>
            </div>
-           <button class="submit-btn">Submit</button>
-         <a role="button" class="default">Not Registered ??</a>
+           <button class="submit-btn" type="submit">Submit</button>
+         <a role="button" class="default" (click)="toSignUp()">Not Registered ??</a>
        </form>
+</div>
 
+<div class="container" *ngIf="! registered">
+  <h1>Company Sign Up</h1>
+  <form (ngSubmit)="onSubmit()" #s="ngForm">
+    <div class="name-input">
+      <label for="name">Name</label>
+      <input type="text" name="name" ngModel required >
+    </div>
+    <div class="email-input">
+      <label for="email">Email</label>
+      <input type="email" name="email" ngModel required email>
+    </div>
+    <div class="location-input">
+      <label for="location">Location</label>
+      <input type="text" name="location" ngModel required>
+    </div>
+    <div class="password-input">
+      <label for="password">Password</label>
+      <input type="text" name="password"   ngModel required  #pass="ngModel">
+    </div>
+    <div class="confirm-password-input">
+      <label for="conf-password">Confirm Password</label>
+      <input type="text" name="confpass" ngModel required #confpass="ngModel">
+    </div>
+    <div class="warnings">
+      <p *ngIf="confpass.touched && confpass.value!==pass.value" >Password did not Matched</p>
+    </div>
+    <button class="submit-btn" type="submit">Register</button>
+    <a role="button"  class="default" (click)="toSignUp()">Back to Login</a>
+  </form>
 </div>

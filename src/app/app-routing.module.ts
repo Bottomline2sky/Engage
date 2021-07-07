@@ -22,6 +22,7 @@ import {CmessagingComponent} from './comp/cgeneral/cmessaging/cmessaging.compone
 import {DauthGuardService} from './auth/dlogin/dauth-guard.service';
 import {DuprofileDeactivateService} from './dev/dsection/duprofile/duprofile-deactivate.service';
 import {DlogInGuardService} from './dev/DlogIn-guard.service';
+import {ClogInGuardService} from './comp/ClogIn-guard.service';
 
 
 const routes : Routes = [
@@ -41,7 +42,7 @@ const routes : Routes = [
     ]},
   {path: 'dlogin' , component: DloginComponent},
   {path: 'clogin' ,component : CloginComponent},
-  {path: 'comp' , component: CompComponent,
+  {path: 'comp' , canActivate: [ClogInGuardService],component: CompComponent,
     children : [
       {path: '' , component: CgeneralComponent,
        children:  [

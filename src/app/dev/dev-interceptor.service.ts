@@ -14,7 +14,7 @@ export class DevInterceptorService implements HttpInterceptor {
        intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
            const  temp = environment.apiUrl;
-        const allUrls = [temp + '/devproute/update' , temp+'/devprofile/read'];
+        const allUrls = [temp + '/devproute/update' , temp+'/devprofile/read' , temp+'/devprofile/create/image'];
              console.log(req.url)
            if(allUrls.includes(req.url)) {
              const newUrl = req.clone({

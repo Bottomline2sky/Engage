@@ -11,7 +11,7 @@ import {DprofileModel} from '../dprofile.model';
   styleUrls: ['./duprofile.component.css']
 })
 export class DuprofileComponent implements OnInit, DuprofileDeactivationInterface {
-
+         isImageUploading: boolean = false;
        isSaved : boolean = false;
       dProfile : DprofileModel = null;
   imageUrl: string ;
@@ -51,13 +51,17 @@ export class DuprofileComponent implements OnInit, DuprofileDeactivationInterfac
         'name' : this.dProfile.name,
         'about' : this.dProfile.about
       });
-      this.imageUrl = this.dProfile.pimage;
+      this.imageUrl = this.dProfile.image;
+      (<FormArray>this.profileForm.get('education')).clear();
+      (<FormArray>this.profileForm.get('skills')).clear();
+      (<FormArray>this.profileForm.get('experience')).clear();
       for(let edu of this.dProfile.education) {
         let  tempGroup = new FormGroup({
           'year' : new FormControl(edu.year),
           'school' : new FormControl(edu.school)
         });
         (<FormArray>this.profileForm.get('education')).push(tempGroup);
+
       }
 
       for(let skill of this.dProfile.skills) {
@@ -140,9 +144,34 @@ export class DuprofileComponent implements OnInit, DuprofileDeactivationInterfac
                  return confirm("Discard Changes !!!!");
               }
       }
-  onSubmit( ) {
-        this.isSaved = true;
+        uploadImage(event : Event) {
+          const file = (event.target as HTMLInputElement).files[0];
+          const newFormData = new FormData();
+          newFormData.append('profilepic', file);
+            this.isImageUploading = true;
+           this.dprofileService.updateImage(newFormData).subscribe(res=>{
+                 this.isImageUploading= false;
+                    this.imageUrl = res.image;
+                   alert("Image Updated Successfully");
+           });
+        }
 
-  }
+  onSubmit( ) {
+          const formVal =  this.profileForm.value;
+          const nUpdatedProfile = {
+                name: formVal.name,
+                education: formVal.education,
+               skills: formVal.skills,
+                experience: formVal.experience,
+                about:formVal.about
+              };
+             this.dprofileService.updateProfile(nUpdatedProfile).subscribe(res=>{
+                   alert("Updated Successfully");
+                    this.isSaved = true;
+             })
+   }
 
 }
+
+
+
