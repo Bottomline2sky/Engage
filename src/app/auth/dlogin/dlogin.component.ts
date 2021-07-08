@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm, NgModel} from '@angular/forms';
 import {DloginService} from './dlogin.service';
 import {Router} from '@angular/router';
+import {CloginService} from '../clogin/clogin.service';
 
 @Component({
   selector: 'app-dlogin',
@@ -14,7 +15,8 @@ export class DloginComponent implements OnInit {
         @ViewChild('s')   signUpData : NgForm;
          @ViewChild('pass') password : NgModel;
 
-   constructor(private dloginService : DloginService, private route: Router) { }
+   constructor(private dloginService : DloginService, private route: Router
+   , private cloginService: CloginService) { }
 
    ngOnInit(): void {
   }
@@ -42,6 +44,7 @@ export class DloginComponent implements OnInit {
              password: this.logInData.value.password
         };
          this.dloginService.toLogIn(logInData).subscribe((res)=>{
+            this.cloginService.removeToken();
               this.route.navigate(['/dev']);
 
           },error => {

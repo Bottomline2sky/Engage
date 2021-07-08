@@ -68,8 +68,4 @@ export class DloginService  {
                this.tokenValidity = null;
                  localStorage.removeItem('userData');
        }
-
-
-
-
 }

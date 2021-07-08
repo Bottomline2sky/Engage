@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {DloginService} from './auth/dlogin/dlogin.service';
+import {CloginService} from './auth/clogin/clogin.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,9 @@ import {DloginService} from './auth/dlogin/dlogin.service';
 })
 export class AppComponent {
   title = 'Engage';
-   constructor(private dloginService: DloginService) {
+   constructor(private dloginService: DloginService,
+               private cloginService: CloginService) {
         this.dloginService.retrieveLocalToken();
+        this.cloginService.retrieveLocalToken();
    }
 }

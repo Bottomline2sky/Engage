@@ -1,3 +1,26 @@
-<h1>these  are jobs that is ongoing  here </h1>
-<a href="#">Recommanded for You or from your subscription</a>
-<a href="#"></a>
+ <div class="spinner-loader" *ngIf="isLoading">
+ <app-loader-spinner></app-loader-spinner>
+ </div>
+  <div class="list-wrapper">
+      <div class="card-wrapper" *ngFor="
+  let job of allJobs;let i=index">
+            <div class="jid">
+               <h3>Jid: {{job.jid}}</h3>
+            </div>
+         <div class="card-heading">
+           <a href="#">Comapny:</a>
+         </div>
+        <div class="jtitle">
+         <h2>Job Title: {{job.jtitle}} </h2>
+        </div>
+          <div class="apply-button">
+               <button class="btn-direct" role="link" (click)="applyHere(i)">
+                  Apply
+               </button>
+          </div>
+      </div>
+  </div>
+
+
+
+

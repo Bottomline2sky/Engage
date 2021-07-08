@@ -55,9 +55,9 @@ export class CloginService {
               };
               localStorage.setItem('compData', JSON.stringify(compData));
          }
-         //  removeToken() {
-         // this.latestToken = null;
-         //   this.tokenValidity = null;
-         //   localStorage.removeItem('compData')
-         //  }
+          removeToken() {
+         this.latestToken = null;
+           this.tokenValidity = null;
+           localStorage.removeItem('compData')
+          }
    }

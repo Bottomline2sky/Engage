@@ -15,7 +15,6 @@ export class DevInterceptorService implements HttpInterceptor {
 
            const  temp = environment.apiUrl;
         const allUrls = [temp + '/devproute/update' , temp+'/devprofile/read' , temp+'/devprofile/create/image'];
-             console.log(req.url)
            if(allUrls.includes(req.url)) {
              const newUrl = req.clone({
                headers: new HttpHeaders({
@@ -23,7 +22,6 @@ export class DevInterceptorService implements HttpInterceptor {
                })
                }
              );
-               console.log(newUrl.headers);
              return next.handle(newUrl).pipe(tap(event => {
                console.log(event);
              }));

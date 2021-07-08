@@ -32,7 +32,7 @@ import {DuprofileDeactivateService} from './dev/dsection/duprofile/duprofile-dea
 import {allInterceptors} from './allInterceptors.mentions';
 import { LoaderSpinnerComponent } from './loader-spinner/loader-spinner.component';
 import {DevInterceptorService} from './dev/dev-interceptor.service';
-
+import { CompInterceptorService } from './comp/comp-interceptor.service';
 
 
 
@@ -71,7 +71,9 @@ import {DevInterceptorService} from './dev/dev-interceptor.service';
     HttpClientModule
 
   ],
-  providers: [DauthGuardService, DuprofileDeactivateService, {provide: HTTP_INTERCEPTORS, useClass: DevInterceptorService, multi:true}],
+  providers: [DauthGuardService, DuprofileDeactivateService, [{provide: HTTP_INTERCEPTORS, useClass: DevInterceptorService, multi:true}
+       , {provide: HTTP_INTERCEPTORS, useClass: CompInterceptorService, multi: true }]
+  ],
   bootstrap: [AppComponent]
 })
 

@@ -23,6 +23,7 @@ import {DauthGuardService} from './auth/dlogin/dauth-guard.service';
 import {DuprofileDeactivateService} from './dev/dsection/duprofile/duprofile-deactivate.service';
 import {DlogInGuardService} from './dev/DlogIn-guard.service';
 import {ClogInGuardService} from './comp/ClogIn-guard.service';
+import {JdescComponent} from './dev/djobs/jdesc/jdesc.component';
 
 
 const routes : Routes = [
@@ -37,7 +38,9 @@ const routes : Routes = [
           {path: 'notification' , component: NotificationComponent},
           {path: 'past-result' , component: PastresultComponent}
         ]},
-      {path: 'djobs' , component: DjobsComponent},
+      {path: 'djobs' , component: DjobsComponent,
+        children: []},
+      {path: ':id/djdesc', component: JdescComponent},
       {path: 'dsearch' ,component: DsearchComponent}
     ]},
   {path: 'dlogin' , component: DloginComponent},
