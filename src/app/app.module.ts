@@ -38,7 +38,6 @@ import { CompInterceptorService } from './comp/comp-interceptor.service';
 
 
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -61,7 +60,8 @@ import { CompInterceptorService } from './comp/comp-interceptor.service';
         CgeneralComponent,
         NjobComponent,
         PjobsComponent,
-        LoaderSpinnerComponent
+        LoaderSpinnerComponent,
+
     ],
   imports: [
     BrowserModule,
@@ -69,7 +69,6 @@ import { CompInterceptorService } from './comp/comp-interceptor.service';
      ReactiveFormsModule,
      AppRoutingModule,
     HttpClientModule
-
   ],
   providers: [DauthGuardService, DuprofileDeactivateService, [{provide: HTTP_INTERCEPTORS, useClass: DevInterceptorService, multi:true}
        , {provide: HTTP_INTERCEPTORS, useClass: CompInterceptorService, multi: true }]

@@ -16,13 +16,15 @@ export class DjobsGeneralService {
    return this.http.get<DJobModel[]>(environment.apiUrl+ '/fetchAll/ongoingJobs').
     pipe(tap(res=>{
        this.allJobs = res;
-        console.log(res);
     }));
   }
 
     getJobWithId(x: number) {
       return this.allJobs[x];
 }
+     applyToTheJob(jid : string) {
+         return this.http.get(environment.apiUrl + '/apply/' + jid);
+     }
 
 
 }

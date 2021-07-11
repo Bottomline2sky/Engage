@@ -13,7 +13,12 @@ export class CpostComponent implements OnInit {
   constructor(private postService : PostService) { }
 
   ngOnInit(): void {
-        this.allPosts = this.postService.getPosts();
+        this.postService.fetchPosts().subscribe(res=>{
+              this.allPosts = res;
+        });
+           this.postService.ee.subscribe(res=>{
+                this.allPosts = this.postService.getPosts();
+           })
   }
   newPost() {
          this.isActivePost = true;

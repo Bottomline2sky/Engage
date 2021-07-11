@@ -12,15 +12,21 @@ import {Subject} from 'rxjs';
 
 
 export class PostService {
-    private postArray : PostModel[]=[{message : "hello this is the part of the sequence of the letter" ,
-     image: 'https://images.unsplash.com/photo-1597413545419-4013431dbfec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhhcHB5JTIwY2hpbGR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'}];
+    private postArray : PostModel[]=[];
       ee = new Subject<PostModel[]>();
 
-      constructor(private http: HttpClient) {
+       constructor(private http: HttpClient) {
       }
 
 
 
+
+       fetchPosts() {
+         return this.http.get<PostModel[]>(environment.apiUrl + '/compfeed/getPosts').pipe(tap(res => {
+           this.postArray = res;
+           this.ee.next(res);
+         }));
+       }
 
 
       getPosts() {

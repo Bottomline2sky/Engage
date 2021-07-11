@@ -2,6 +2,7 @@ import {Component, OnInit, Output} from '@angular/core';
 import  {EventEmitter} from '@angular/core';
 import {SafeResourceUrl} from '@angular/platform-browser';
 import {FormControl, FormGroup} from '@angular/forms';
+import {PostService} from '../post.service';
 
 
 @Component({
@@ -15,10 +16,12 @@ export class NpostComponent implements OnInit {
                   'message' : new FormControl(),
                    'image' : new FormControl(null),
                 });
-  constructor() { }
-     imageUrl: string | ArrayBuffer | SafeResourceUrl = 'https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFwcGluZXNzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80'
-  ngOnInit(): void {
-  }
+  constructor(private postService : PostService) { }
+     imageUrl: string | ArrayBuffer;
+
+
+    ngOnInit(): void {
+      }
 
 
 
@@ -40,8 +43,17 @@ export class NpostComponent implements OnInit {
    }
 
      onSendPost(message : string) {
-          this.myPost.patchValue({message});
-            console.log(this.myPost.value);
-     }
+       this.myPost.patchValue({message});
+       const formData = new FormData();
+                formData.append('message', this.myPost.value.message);
+                 formData.append('post',this.myPost.value.image);
+         this.postService.addNewPost(formData).subscribe(res=>{
+             console.log(res);
+              alert("seuucdg");
+
+         },error => {
+           console.log(error)
+         });
+  }
 
 }

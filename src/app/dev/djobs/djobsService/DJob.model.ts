@@ -10,5 +10,5 @@ export class DJobModel {
   jtitle: string;
   location: string;
   qualification: string;
-  skill: any;
+  skills: any;
 }
