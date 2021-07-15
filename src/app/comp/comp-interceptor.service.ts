@@ -11,7 +11,7 @@ export class CompInterceptorService implements HttpInterceptor {
         }
  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
          const temp = environment.apiUrl;
-          const allUrls =[temp+'/compjob/publish'];
+   const allUrls =[temp+'/compjob/publish', temp+'/compfeed/post' , temp+'/compfeed/getPosts'];
           if(allUrls.includes(req.url)) {
              const newUrl = req.clone({
                 headers: new HttpHeaders({

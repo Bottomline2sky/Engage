@@ -1,8 +1,5 @@
-
-
-
 export class DJobModel {
-   jid: string;
+  jid: string;
   compensation: string;
   eligibility: string;
   jabout: string;
@@ -10,5 +7,5 @@ export class DJobModel {
   jtitle: string;
   location: string;
   qualification: string;
-  skill: any;
+  skills: any;
 }

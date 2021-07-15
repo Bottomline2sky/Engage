@@ -1,0 +1,30 @@
+.container {
+
+
+}
+.job-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 70px auto;
+  background-color: #ddd;
+}
+.jgeneral {
+  margin-left: 30px;
+
+}
+p{
+  font-size: 25px;
+}
+.apply-btn {
+  margin-top: 20px;
+
+}
+.btn-direct{
+  font-size: 25px;
+  padding: 8px ;
+  width: 100%;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}

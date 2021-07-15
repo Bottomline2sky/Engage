@@ -8,17 +8,22 @@ import {PostModel} from './post.model';
   styleUrls: ['./cpost.component.css']
 })
 export class CpostComponent implements OnInit {
-     isActivePost: boolean = false;
-       allPosts: PostModel[];
+  isActivePost: boolean = false;
+  allPosts: PostModel[];
   constructor(private postService : PostService) { }
 
   ngOnInit(): void {
-        this.allPosts = this.postService.getPosts();
+    this.postService.fetchPosts().subscribe(res=>{
+      this.allPosts = res;
+    });
+    this.postService.ee.subscribe(res=>{
+      this.allPosts = this.postService.getPosts();
+    })
   }
   newPost() {
-         this.isActivePost = true;
+    this.isActivePost = true;
   }
   dnewPost() {
-        this.isActivePost = false;
+    this.isActivePost = false;
   }
 }

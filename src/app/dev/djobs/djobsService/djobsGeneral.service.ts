@@ -12,17 +12,19 @@ export class DjobsGeneralService {
   constructor(private http: HttpClient) {
   }
 
-   fetchAllPost(){
-   return this.http.get<DJobModel[]>(environment.apiUrl+ '/fetchAll/ongoingJobs').
+  fetchAllPost(){
+    return this.http.get<DJobModel[]>(environment.apiUrl+ '/fetchAll/ongoingJobs').
     pipe(tap(res=>{
-       this.allJobs = res;
-        console.log(res);
+      this.allJobs = res;
     }));
   }
 
-    getJobWithId(x: number) {
-      return this.allJobs[x];
-}
+  getJobWithId(x: number) {
+    return this.allJobs[x];
+  }
+  applyToTheJob(jid : string) {
+    return this.http.get(environment.apiUrl + '/apply/' + jid);
+  }
 
 
 }
