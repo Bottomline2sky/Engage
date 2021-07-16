@@ -1,9 +1,25 @@
 <div class="search-wrapper">
   <div class="search-input">
     <label for="name">Serach the Companies</label>
-    <input type="text" >
+    <input type="text" class="input-direct" >
+      <button (click)="findCompanies()" class="btn-direct"><i class="fas fa-search"></i></button>
   </div>
-  <div class="attached-list">
+</div>
 
+<div class="subs-wrapper">
+    <div class="heading">
+        <h1>Your Subscriptions</h1>
+    </div>
+  <div class="all-subscription">
+          <div class="compnay-card" *ngFor="let subs of allSubscriptions; let i=index">
+              <button (click)="companyDisplay(i)">
+            <div class="name-field">
+                <h2 class="name-direct">{{subs.compName}}</h2>
+            </div>
+              <div class="id-field">
+                   <p class="id-direct">{{subs.compId}}</p>
+              </div>
+              </button>
+          </div>
   </div>
 </div>

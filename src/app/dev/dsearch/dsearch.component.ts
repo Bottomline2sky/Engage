@@ -9,17 +9,16 @@ import {DSearchModel} from './Dsearch.model';
 })
 export class DsearchComponent implements OnInit {
   isLoading: boolean = true;
-  allCompanies: DSearchModel[];
+  allSubscriptions: DSearchModel[];
   constructor(
     private dsearchService : DSearchService
   ) { }
 
   ngOnInit(): void {
-    this.allCompanies = this.dsearchService.getAllCompanies();
-    if(this.allCompanies.length ==0) {
-      this.dsearchService.loadCompany().subscribe(res=>{
-        this.allCompanies =  res;
-        console.log(res)
+    this.allSubscriptions = this.dsearchService.getAllSubscriptions();
+    if(this.allSubscriptions == null) {
+      this.dsearchService.loadSubscriptions().subscribe(res=>{
+        this.allSubscriptions =  res;
         this.isLoading= false;
       })
     }
@@ -27,5 +26,10 @@ export class DsearchComponent implements OnInit {
       this.isLoading =false;
     }
   }
+     findCompanies() {
 
+     }
+     companyDisplay(x: number) {
+
+    }
 }

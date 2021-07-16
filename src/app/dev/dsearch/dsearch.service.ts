@@ -9,22 +9,35 @@ import {Subject} from 'rxjs';
 
 
 export class DSearchService {
-  private  allCompanies: DSearchModel[]= [];
+  private  allCompanies: DSearchModel[]= null;
+    private allSubscriptions : DSearchModel[] = null;
   ee = new Subject<DSearchModel[]>();
+    ee2 = new Subject<DSearchModel[]>();
   constructor(private http: HttpClient) {
   }
 
-  getAllCompanies() {
-    return [...this.allCompanies];
+  getAllSubscriptions() {
+       if(this.allSubscriptions != null) {
+         return [...this.allSubscriptions];
+       }
+       else return null;
   }
 
+  //
+  // loadCompany() {
+  //   return this.http.get<DSearchModel[]>(environment.apiUrl + '/getAllCompanies').pipe(tap(res => {
+  //     this.allCompanies = res;
+  //
+  //   }));
+  // }
 
-  loadCompany() {
-    return this.http.get<DSearchModel[]>(environment.apiUrl + '/getAllCompanies').pipe(tap(res=>{
-      this.allCompanies = res;
-    }));
-
-  }
+    loadSubscriptions () {
+        return this.http.get<DSearchModel[]>(environment.apiUrl+'/dev/getAllSubscriptions').pipe(
+            tap(res=>{
+                   this.allSubscriptions  = res;
+                    this.ee2.next(res);
+            })
+        )}
 
 
 }

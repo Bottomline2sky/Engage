@@ -1,0 +1,60 @@
+.search-wrapper {
+        display: flex;
+         width: 50%;
+      margin: 70px auto;
+}
+.search-input{
+  width: 100%;
+}
+.input-direct {
+      height: 40px;
+       width: 90%;
+        margin-top: 15px;
+        border-radius: 10px;
+       font-size: 25px;
+       font-family: "Calibri Light";
+}
+label {
+     font-size: 25px;
+      margin: 30px 0;
+}
+.btn-direct{
+   width: 8%;
+    height: 40px;
+     position: relative;
+     left: -60px;
+     border: none;
+     background: none;
+      cursor: pointer;
+}
+i{
+   font-size: 30px;
+
+}
+.compnay-card {
+      background-color: #880e4f;
+      color: white;
+      padding: 20px;
+      margin: 15px 20px;
+}
+
+.all-subscription {
+     display: flex;
+     flex-wrap: wrap;
+
+}
+.name-direct {
+     font-size: 30px;
+
+}
+.id-direct {
+     font-size: 20px;
+}
+.compnay-card button {
+   background: none;
+    border: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: white;
+    cursor: pointer;
+}
