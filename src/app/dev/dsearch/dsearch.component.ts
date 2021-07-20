@@ -9,6 +9,7 @@ import {DSearchModel} from './Dsearch.model';
 })
 export class DsearchComponent implements OnInit {
   isLoading: boolean = true;
+     matchedCompany: DSearchModel[] = [];
   allSubscriptions: DSearchModel[];
   constructor(
     private dsearchService : DSearchService
@@ -26,8 +27,10 @@ export class DsearchComponent implements OnInit {
       this.isLoading =false;
     }
   }
-     findCompanies() {
-
+     findCompanies(name : string) {
+             this.dsearchService.searchCompany(name).subscribe(res=>{
+                this.matchedCompany = res;
+             })
      }
      companyDisplay(x: number) {
 

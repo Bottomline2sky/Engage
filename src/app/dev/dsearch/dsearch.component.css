@@ -58,3 +58,27 @@ i{
   color: white;
     cursor: pointer;
 }
+.search-result {
+       list-style: none;
+        margin: 30px 60px;
+}
+.spanid {
+     font-size: 25px;
+}
+.spanname {
+     font-size: 30px;
+      margin-left: 80px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+}
+.search-element {
+        border: 2px solid magenta;
+         text-align: center;
+          margin-top: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.search-result-button {
+       border: none;
+        background-color: white;
+       cursor: pointer;
+}

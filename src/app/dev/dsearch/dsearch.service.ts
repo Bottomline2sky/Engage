@@ -39,5 +39,7 @@ export class DSearchService {
             })
         )}
 
-
+              searchCompany(name : string) {
+        return this.http.get<DSearchModel[]>(environment.apiUrl+`/search/${name}/company`);
+              }
 }

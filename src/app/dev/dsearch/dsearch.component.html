@@ -1,11 +1,26 @@
-<div class="search-wrapper">
+<div class="search-wrapper" xmlns="http://www.w3.org/1999/html">
   <div class="search-input">
     <label for="name">Serach the Companies</label>
-    <input type="text" class="input-direct" >
-      <button (click)="findCompanies()" class="btn-direct"><i class="fas fa-search"></i></button>
+    <input type="text" class="input-direct" #f>
+      <button (click)="findCompanies(f.value)" class="btn-direct"><i class="fas fa-search"></i></button>
   </div>
 </div>
+        <div class="search-result">
+                <div class="heading">
+                     <h1>Search Result</h1>
+                </div>
+             <div>
+                  <ul class="search-result">
+                       <li class="search-element" *ngFor="let comp of matchedCompany;let i=index">
+                         <button (click)="companyDisplay(i)" class="search-result-button"> <span class="spanid">{{comp.compId}}</span>
+                               <span class="spanname">{{comp.compName}}</span>
+                         </button>
+                       </li>
 
+                  </ul>
+
+             </div>
+        </div>
 <div class="subs-wrapper">
     <div class="heading">
         <h1>Your Subscriptions</h1>
