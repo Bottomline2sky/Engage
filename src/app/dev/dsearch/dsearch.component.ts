@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DSearchService} from './dsearch.service';
 import {DSearchModel} from './Dsearch.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dsearch',
@@ -12,7 +13,8 @@ export class DsearchComponent implements OnInit {
      matchedCompany: DSearchModel[] = [];
   allSubscriptions: DSearchModel[];
   constructor(
-    private dsearchService : DSearchService
+    private dsearchService : DSearchService,
+     private route: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +34,8 @@ export class DsearchComponent implements OnInit {
                 this.matchedCompany = res;
              })
      }
-     companyDisplay(x: number) {
-
+     companyDisplay( x: string) {
+        console.log("Move")
+        this.route.navigate(['/dev/'+x+'/cdisplay']);
     }
 }

@@ -24,6 +24,7 @@ import {DuprofileDeactivateService} from './dev/dsection/duprofile/duprofile-dea
 import {DlogInGuardService} from './dev/DlogIn-guard.service';
 import {ClogInGuardService} from './comp/ClogIn-guard.service';
 import {JdescComponent} from './dev/djobs/jdesc/jdesc.component';
+import {CdisplayComponent} from './comp/cdisplay/cdisplay.component';
 
 
 const routes : Routes = [
@@ -41,7 +42,8 @@ const routes : Routes = [
       {path: 'djobs' , component: DjobsComponent,
         children: []},
       {path: ':id/djdesc', component: JdescComponent},
-      {path: 'dsearch' ,component: DsearchComponent}
+      {path: 'dsearch' ,component: DsearchComponent},
+      {path: ':cid/cdisplay',component: CdisplayComponent},
     ]},
   {path: 'dlogin' , component: DloginComponent},
   {path: 'clogin' ,component : CloginComponent},

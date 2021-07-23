@@ -33,6 +33,9 @@ import {allInterceptors} from './allInterceptors.mentions';
 import { LoaderSpinnerComponent } from './loader-spinner/loader-spinner.component';
 import {DevInterceptorService} from './dev/dev-interceptor.service';
 import { CompInterceptorService } from './comp/comp-interceptor.service';
+import { CdisplayComponent } from './comp/cdisplay/cdisplay.component';
+import { CaboutComponent } from './comp/cdisplay/cabout/cabout.component';
+import { CinfoComponent } from './comp/cdisplay/cinfo/cinfo.component';
 
 
 
@@ -61,7 +64,10 @@ import { CompInterceptorService } from './comp/comp-interceptor.service';
         CgeneralComponent,
         NjobComponent,
         PjobsComponent,
-        LoaderSpinnerComponent
+        LoaderSpinnerComponent,
+        CdisplayComponent,
+        CaboutComponent,
+        CinfoComponent
     ],
   imports: [
     BrowserModule,

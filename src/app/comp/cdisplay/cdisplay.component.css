@@ -1,0 +1,26 @@
+.switch-wrapper {
+     display: flex;
+      flex-direction: row;
+         margin-top: 5px;
+        justify-content: space-between;
+}
+.about-btn{
+    width: 49.8%;
+     background-color: #2c2f3a;
+      text-align: center;
+}
+.about-btn-direct {
+     background-color: #2c2f3a;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+      font-weight: 1200;
+     color: white;
+     padding: 10px 8px;
+
+}
+.loader-balance {
+  position: absolute;
+  top: 30vh;
+   left: 45%;
+}

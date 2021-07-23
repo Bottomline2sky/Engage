@@ -1,0 +1,19 @@
+<div class="switch-wrapper" *ngIf="!isLoading">
+     <div class="about-btn">
+           <button class="about-btn-direct">
+               About
+           </button>
+
+     </div>
+
+    <div class="about-btn">
+         <button class="about-btn-direct">
+             CInfo
+         </button>
+    </div>
+</div>
+<div *ngIf="isLoading" class="loader-balance">
+ <app-loader-spinner></app-loader-spinner>
+</div>
+
+

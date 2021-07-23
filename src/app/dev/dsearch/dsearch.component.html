@@ -12,7 +12,7 @@
              <div>
                   <ul class="search-result">
                        <li class="search-element" *ngFor="let comp of matchedCompany;let i=index">
-                         <button (click)="companyDisplay(i)" class="search-result-button"> <span class="spanid">{{comp.compId}}</span>
+                         <button (click)="companyDisplay(comp.compId)" class="search-result-button"> <span class="spanid">{{comp.compId}}</span>
                                <span class="spanname">{{comp.compName}}</span>
                          </button>
                        </li>
@@ -27,7 +27,7 @@
     </div>
   <div class="all-subscription">
           <div class="compnay-card" *ngFor="let subs of allSubscriptions; let i=index">
-              <button (click)="companyDisplay(i)">
+              <button (click)="companyDisplay(subs.compId)">
             <div class="name-field">
                 <h2 class="name-direct">{{subs.compName}}</h2>
             </div>
