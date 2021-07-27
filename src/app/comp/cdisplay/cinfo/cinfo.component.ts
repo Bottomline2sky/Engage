@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CdisplayService} from '../cdisplay.service';
+import {PostModel} from '../../cpost/post.model';
 
 @Component({
   selector: 'app-cinfo',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cinfo.component.css']
 })
 export class CinfoComponent implements OnInit {
-
-  constructor() { }
+       allPosts: PostModel[];
+  constructor(private  cDisplayService: CdisplayService) { }
 
   ngOnInit(): void {
+          this.allPosts = this.cDisplayService.getAllPosts();
   }
 
 }

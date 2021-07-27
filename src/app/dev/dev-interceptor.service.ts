@@ -16,7 +16,7 @@ export class DevInterceptorService implements HttpInterceptor {
     const  temp = environment.apiUrl;
     const allUrls = [temp + '/devproute/update' , temp+'/devprofile/read' , temp+'/devprofile/create/image',
       temp+'/dev/getAllSubscriptions'];
-    if(allUrls.includes(req.url)  || req.url.includes('apply')) {
+    if(allUrls.includes(req.url)  || req.url.includes('apply') || req.url.includes('getPosts') || req.url.includes('addSubscription')) {
       const newUrl = req.clone({
           headers: new HttpHeaders({
             'Authorization': 'Bearer '+  this.devLoginService.getToken()

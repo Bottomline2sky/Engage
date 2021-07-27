@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {CdisplayService} from '../cdisplay.service';
 
 @Component({
   selector: 'app-cabout',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cabout.component.css']
 })
 export class CaboutComponent implements OnInit {
-
-  constructor() { }
+    @Input() cid: string;
+  constructor(private cDisplayService: CdisplayService) { }
 
   ngOnInit(): void {
+
   }
+
+
+      addSubScription() {
+          this.cDisplayService.addSubScription(this.cid).subscribe(res=>{
+                  alert("subscritpion add SUccessfully");
+          });
+      }
+
 
 }

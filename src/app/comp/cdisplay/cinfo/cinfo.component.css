@@ -1,0 +1,80 @@
+job-list {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.job-listing{
+  position: fixed;
+  top: auto;
+  background-color: #ddd;
+}
+.job-list {
+  padding: 10px 25px;
+}
+.job-title{
+  font-size: 25px;
+}
+h3 {
+  margin: 0;
+}
+span {
+  margin-left: 5px;
+  font-size: 20px;
+}
+.open-heading {
+  text-align: center;
+  font-size: 30px;
+  color:  darkred;
+}
+
+.gen-post {
+  margin-left: 300px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+
+}
+.image-direct{
+  width: 100%;
+
+}
+.text-wrapper {
+  margin: 20px 5px;
+  font-size: 20px;
+}
+.card {
+  width:  100%;
+  margin-top: 50px;
+  border: 3px solid deepskyblue;
+  border-radius: 15px;
+}
+.image-wrapper {
+  height: 400px;
+
+}
+.image-direct{
+  height: 400px;
+}
+
+
+.btn-direct {
+  font-size: 25px;
+  color: #fff;
+  width: 100%;
+  background-color: #00f;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 5px ;
+}
+.btn-wrapper {
+  width: 100%;
+}
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 5;
+}

@@ -3,6 +3,10 @@
       flex-direction: row;
          margin-top: 5px;
         justify-content: space-between;
+         position: fixed;
+          top:  30px;
+       width: 100%;
+        z-index: 5;
 }
 .about-btn{
     width: 49.8%;
@@ -23,4 +27,11 @@
   position: absolute;
   top: 30vh;
    left: 45%;
+}
+.cinfo-render {
+
+}
+.cabout-render {
+     margin-top: 300px;
+     margin-left: 200px;
 }

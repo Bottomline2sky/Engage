@@ -1,13 +1,13 @@
 <div class="switch-wrapper" *ngIf="!isLoading">
      <div class="about-btn">
-           <button class="about-btn-direct">
+           <button class="about-btn-direct" (click)="toCaboutMode()">
                About
            </button>
 
      </div>
 
     <div class="about-btn">
-         <button class="about-btn-direct">
+         <button class="about-btn-direct" (click)="toCinfoMode()">
              CInfo
          </button>
     </div>
@@ -15,5 +15,11 @@
 <div *ngIf="isLoading" class="loader-balance">
  <app-loader-spinner></app-loader-spinner>
 </div>
-
+  <div *ngIf="cInfoMode" class="cinfo-render">
+      <h1>Our Posts</h1>
+<app-cinfo></app-cinfo>
+</div>
+ <div *ngIf="cAboutMode" class="cabout-render">
+   <app-cabout [cid]="cid"></app-cabout>
+ </div>
 
