@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {DloginService} from './auth/dlogin/dlogin.service';
 import {CloginService} from './auth/clogin/clogin.service';
+import {SocketConnectService} from './socketConnect.service';
 
 @Component({
   selector: 'app-root',

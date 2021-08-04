@@ -12,15 +12,17 @@ import {CloginService} from '../clogin/clogin.service';
 export class DloginService  {
        private latestToken : string = null;
          private tokenValidity : number = null;
-
+               private uId : string = null;
         retrieveLocalToken() {
               const localToken: {
                    token : string,
-                   validity:  number
+                   validity:  number,
+                    uId: string
               } = JSON.parse(localStorage.getItem('userData'));
                console.log(localToken?.token);
                this.latestToken = localToken?.token;
                  this.tokenValidity = localToken?.validity;
+                   this.uId = localToken?.uId;
         }
 
 
@@ -40,25 +42,30 @@ export class DloginService  {
          }
          }
 
-
+         getUid(){
+             return this.uId;
+         }
 
   toSignUp(userData: {name: string , email: string, password: string}) {
         return  this.http.post(environment.apiUrl+'/devg/signup',userData);
        }
   toLogIn(newLogIn: {email: string, password: string}) {
-        return this.http.post<{logToken: string , validity: number}>(environment.apiUrl+ '/devg/login', newLogIn).pipe(map(res=>{
+        return this.http.post<{logToken: string , validity: number, uId: string}>(environment.apiUrl+ '/devg/login', newLogIn).pipe(map(res=>{
                  this.latestToken = res.logToken;
                   this.tokenValidity = res.validity;
-                   this.saveTokenLocally(this.latestToken,this.tokenValidity);
+                   this.uId = res.uId;
+                    console.log(this.uId);
+                   this.saveTokenLocally(this.latestToken,this.tokenValidity, this.uId);
                      localStorage.removeItem('compData');
         }));
        }
 
 
-       private  saveTokenLocally(tokenValue: string , validity: number) {
+       private  saveTokenLocally(tokenValue: string , validity: number,uId: string) {
                const  userData  = {
                         token : tokenValue,
-                       validity: validity
+                       validity: validity,
+                     uId: uId
                  } ;
             localStorage.setItem('userData' , JSON.stringify(userData));
        }

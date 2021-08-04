@@ -28,6 +28,7 @@
 .fixed-margin{
      margin-top: 70px;
      margin-left: 57.5px;
-     display: flex;
-    justify-content: center;
+     /*display: flex;*/
+    /*justify-content: center;*/
+
 }

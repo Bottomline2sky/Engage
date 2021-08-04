@@ -3,6 +3,8 @@ import {NgForm, NgModel} from '@angular/forms';
 import {DloginService} from './dlogin.service';
 import {Router} from '@angular/router';
 import {CloginService} from '../clogin/clogin.service';
+import {io} from 'socket.io-client';
+import {SocketConnectService} from '../../socketConnect.service';
 
 @Component({
   selector: 'app-dlogin',
@@ -14,6 +16,7 @@ export class DloginComponent implements OnInit {
        @ViewChild('f')   logInData : NgForm;
         @ViewChild('s')   signUpData : NgForm;
          @ViewChild('pass') password : NgModel;
+            socket: any;
 
    constructor(private dloginService : DloginService, private route: Router
    , private cloginService: CloginService) { }
@@ -45,9 +48,9 @@ export class DloginComponent implements OnInit {
         };
          this.dloginService.toLogIn(logInData).subscribe((res)=>{
             this.cloginService.removeToken();
-              this.route.navigate(['/dev']);
 
-          },error => {
+              this.route.navigate(['/dev']);
+              },error => {
             console.log(error)
          });
     }

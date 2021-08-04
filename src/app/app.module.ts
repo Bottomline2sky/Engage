@@ -36,11 +36,13 @@ import { CompInterceptorService } from './comp/comp-interceptor.service';
 import { CdisplayComponent } from './comp/cdisplay/cdisplay.component';
 import { CaboutComponent } from './comp/cdisplay/cabout/cabout.component';
 import { CinfoComponent } from './comp/cdisplay/cinfo/cinfo.component';
+import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
+import { ChatDisplayComponent } from './dev/dsection/messaging/chat-display/chat-display.component';
 
 
 
 
-
+// const config: SocketIoConfig ={ url: 'http://localhost:3001', options: {}};
 
 @NgModule({
     declarations: [
@@ -67,14 +69,16 @@ import { CinfoComponent } from './comp/cdisplay/cinfo/cinfo.component';
         LoaderSpinnerComponent,
         CdisplayComponent,
         CaboutComponent,
-        CinfoComponent
+        CinfoComponent,
+        ChatDisplayComponent
     ],
   imports: [
     BrowserModule,
     FormsModule,
      ReactiveFormsModule,
      AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    // SocketIoModule.forRoot(config)
 
   ],
   providers: [DauthGuardService, DuprofileDeactivateService, [{provide: HTTP_INTERCEPTORS, useClass: DevInterceptorService, multi:true}

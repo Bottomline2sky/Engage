@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Form, FormArray, FormControl, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
+import {SocketConnectService} from '../socketConnect.service';
 
 @Component({
   selector: 'app-dev',
@@ -11,8 +12,7 @@ export class DevComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }

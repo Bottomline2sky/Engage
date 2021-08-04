@@ -1,0 +1,20 @@
+.input-type-wrapper{
+     position: fixed;
+     bottom: 10px;
+      display: flex;
+      /*justify-content: space-evenly;*/
+       width: 100%;
+}
+.input-direct{
+     height: 30px;
+     width: 70%;
+     font-size: 20px;
+     font-family: cursive;
+}
+.btn-direct {
+           margin-left: 10px;
+            font-size: 20px;
+             padding: 2px 5px;
+              cursor: pointer;
+              background-color: #ddd;
+}
