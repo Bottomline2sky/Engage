@@ -1,7 +1,18 @@
 <div class="past-chat-wrapper">
-  <h1>works</h1>
+
+
+<div class="input-type-wrapper" *ngIf="isClicked" #f>
+  <input type="text"  class="input-direct" [(ngModel)]="messageBinder">
+    <button class="btn-direct" (click)="sendMessage()"> Send Message</button>
 </div>
-<div class="input-type-wrapper">
-  <input type="text"  class="input-direct">
-    <button class="btn-direct"> Send Message</button>
+<div class="message-wrapper">
+      <div class="message-list">
+             <div *ngFor="let chats of chatList" class="message-card">
+              <p class="text-message">{{chats.message}} </p>
+              <p class="time-message">{{chats.time}}</p>
+             </div>
+      </div>
 </div>
+
+</div>
+

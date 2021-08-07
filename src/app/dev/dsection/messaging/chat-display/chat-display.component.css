@@ -18,3 +18,22 @@
               cursor: pointer;
               background-color: #ddd;
 }
+.message-list {
+  margin: 20px 10px;
+  display: flex;
+    flex-direction: column;
+}
+.message-card {
+  border: 1px solid red;
+    border-radius: 5px;
+  box-shadow: #fff,1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+     padding: 5px 10px;
+}
+.text-message {
+      font-size: 20px;
+}
+.time-message {
+      text-align: right;
+}

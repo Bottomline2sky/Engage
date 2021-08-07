@@ -6,6 +6,7 @@
              flex-direction: column;
                height: 100vh;
               align-items: center;
+      width: 180px;
 
   background-color: #ddd;
 }
@@ -46,7 +47,7 @@ h1,h2{
 }
 .chat-box-wrapper{
     margin-left: 210px;
-   background-color: #777777;
+   /*background-color: lightcoral;*/
       margin-right: 20px;
   height: 1
 

@@ -4,21 +4,22 @@
   <h1>Your Messages</h1>
 </div>
 
-<div class="past-chat-wrapper">
+<div class="past-chat-wrapper" *ngIf="!isListLoading">
     <div class="chat-list-heading">
       <h2>Your Contacts</h2>
     </div>
           <ul class="contact-list">
-            <li class="contact-list-element"><button>Piyush Awasthi</button></li>
-            <li class="contact-list-element"><button>Piyush Awasthi</button></li>
-            <li class="contact-list-element"><button>Piyush Awasthi</button></li>
-            <li class="contact-list-element"><button>Piyush Awasthi</button></li>
-            <li class="contact-list-element"><button>Piyush Awasthi</button></li>
+            <li class="contact-list-element" *ngFor="let contact of contactList; let i=index">
+              <button (click)="toThisContact(i)" [ngStyle]="{'background-color' : getColor(i)}">{{contact.contact.uName}}
+                <i class="fas fa-signal" *ngIf="contact.status"></i>
+                <i class="fas fa-hand-scissors" *ngIf="!contact.status"></i></button></li>
           </ul>
 </div>
 
-
-<div class="chat-box-wrapper">
+<input type="text" #f1 style="margin-left: 330px; height: 80px">
+<input type="text" #f2 style="height: 80px">
+ <button (click)="addUser(f1.value, f2.value)">Add to List</button>
+<div class="chat-box-wrapper" *ngIf="!isListLoading">
   <app-chat-display></app-chat-display>
 
 </div>
