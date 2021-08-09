@@ -38,6 +38,8 @@ import { CaboutComponent } from './comp/cdisplay/cabout/cabout.component';
 import { CinfoComponent } from './comp/cdisplay/cinfo/cinfo.component';
 import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 import { ChatDisplayComponent } from './dev/dsection/messaging/chat-display/chat-display.component';
+import { CjobsComponent } from './comp/cjobs/cjobs.component';
+import { JdetailsComponent } from './comp/cjobs/jdetails/jdetails.component';
 
 
 
@@ -70,7 +72,9 @@ import { ChatDisplayComponent } from './dev/dsection/messaging/chat-display/chat
         CdisplayComponent,
         CaboutComponent,
         CinfoComponent,
-        ChatDisplayComponent
+        ChatDisplayComponent,
+        CjobsComponent,
+        JdetailsComponent
     ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+<div>
+<div  *ngIf="isLoadingJobs">
+   <app-loader-spinner></app-loader-spinner>
+</div>
+<div class="jobs-wrapper" *ngIf="!isLoadingJobs">
+     <div class="job-wrapper">
+            <h1>All OnGoing Jobs</h1>
+               <div class="job-list-wrapper">
+                  <div class="list-element-direct" *ngFor="let job of allOngoingJobs" role="button" (click)="toJobDetails(job.jid)">
+                     <h2>{{job.jtitle}}</h2>
+                    <p>{{job.jid}}</p>
+                    <p>{{job.jabout}}</p>
+                  </div>
+               </div>
+     </div>
+  <div class="job-wrapper">
+         <h1>Up Coming Jobs</h1>
+          <div class="job-list-wrapper" *ngFor="let job of allOngoingJobs">
+            <div class="list-element-direct" role="button" (click)="toJobDetails(job.jid)">
+              <h2>{{job.jtitle}}</h2>
+              <p>{{job.jid}}</p>
+              <p>{{job.jabout}}</p>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+

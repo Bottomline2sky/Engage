@@ -10,7 +10,7 @@ export class ChatDisplayComponent implements OnInit {
             index : number = -1;
               messageBinder: string;
                  isClicked : boolean = false;
-                   chatList: {message: string, time: string}[]= [];
+                   chatList: {message: string, time: string, self: boolean}[]= [];
   constructor(private  messageService: MessageService) { }
 
   ngOnInit(): void {

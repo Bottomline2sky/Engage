@@ -25,6 +25,8 @@ import {DlogInGuardService} from './dev/DlogIn-guard.service';
 import {ClogInGuardService} from './comp/ClogIn-guard.service';
 import {JdescComponent} from './dev/djobs/jdesc/jdesc.component';
 import {CdisplayComponent} from './comp/cdisplay/cdisplay.component';
+import {CjobsComponent} from './comp/cjobs/cjobs.component';
+import {JdetailsComponent} from './comp/cjobs/jdetails/jdetails.component';
 
 
 const routes : Routes = [
@@ -46,7 +48,7 @@ const routes : Routes = [
       {path: ':cid/cdisplay',component: CdisplayComponent},
     ]},
   {path: 'dlogin' , component: DloginComponent},
-  {path: 'clogin' ,component : CloginComponent},
+  {path: 'clogin' , component : CloginComponent},
   {path: 'comp' , canActivate: [ClogInGuardService],component: CompComponent,
     children : [
       {path: '' , component: CgeneralComponent,
@@ -56,7 +58,9 @@ const routes : Routes = [
          {path: 'past-jobs' , component: PjobsComponent},
          {path: 'messaging' , component: CmessagingComponent}
        ]},
-      {path: 'cpost' , component: CpostComponent}
+      {path: 'cpost' , component: CpostComponent},
+      {path: 'cjobs' , component: CjobsComponent},
+      {path: 'cjobs/:id/jdetails' , component: JdetailsComponent}
     ]},
 
 ];

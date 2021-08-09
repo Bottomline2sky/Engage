@@ -1,0 +1,29 @@
+.jobs-wrapper {
+     display: flex;
+     margin: 20px  50px;
+}
+.job-wrapper {
+     margin: 15px 20px;
+     border: 2px solid red;
+    border-radius: 10px;
+
+}
+.job-list-wrapper {
+        display: flex;
+        flex-direction: column;
+
+ }
+.list-element-direct {
+          margin: 15px 10px;
+  background-color: lightcoral;
+    padding: 5px 10px;
+    color: #000000;
+    cursor: pointer;
+}
+h2{
+    margin: 0;
+}
+h1{
+   margin: 0;
+   text-align: center;
+}

@@ -8,7 +8,8 @@
 <div class="message-wrapper">
       <div class="message-list">
              <div *ngFor="let chats of chatList" class="message-card">
-              <p class="text-message">{{chats.message}} </p>
+              <p class="text-message">{{chats.message}} <span><i class="fas fa-arrow-down" *ngIf="!chats.self"></i>
+              <i class="fas fa-arrow-up" *ngIf="chats.self"></i></span></p>
               <p class="time-message">{{chats.time}}</p>
              </div>
       </div>

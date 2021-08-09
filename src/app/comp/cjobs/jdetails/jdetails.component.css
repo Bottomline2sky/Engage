@@ -1,0 +1,23 @@
+.job-detail-wrapper {
+       display: flex;
+       flex-direction: column;
+
+       margin-left: 100px;
+
+}
+
+.secondary-wrapper {
+      display: flex;
+     margin: 15px 20px;
+
+}
+.tur-wrapper {
+      margin: 5px 10px;
+}
+span {
+   font-size: 25px;
+   font-weight: 1200;
+}
+p{
+    font-size:  20px;
+}
