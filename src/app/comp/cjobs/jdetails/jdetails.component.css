@@ -6,6 +6,13 @@
 
 }
 
+.loader-class {
+       position: absolute;
+      top:  500px;
+       left: 600px;
+}
+
+
 .secondary-wrapper {
       display: flex;
      margin: 15px 20px;
@@ -20,4 +27,38 @@ span {
 }
 p{
     font-size:  20px;
+}
+.applicant-wrapper {
+           display: flex;
+          flex-direction: column;
+            width: 90%;
+            margin:  50px auto;
+              align-items: center;
+             border: 2px solid red;
+            border-radius: 10px;
+}
+.applicant-detail {
+       display: flex;
+       justify-content: space-between;
+       width: 97%;
+      margin: 10px 10px;
+   background-color: #dddddd;
+    cursor: pointer;
+}
+.applicant-name {
+         margin: 5px 20px;
+          font-size: 30px;
+          padding: 5px 20px;
+}
+.save-btn-direct {
+            padding: 10px 15px;
+            font-size: 20px;
+            background-color: red;
+            color: white;
+            border: 2px solid white;
+            cursor: pointer;
+            border-radius: 10px;
+}
+.save-button{
+      margin: 20px;
 }

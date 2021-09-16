@@ -1,8 +1,8 @@
-<div class="laoder-class" *ngIf="isLoading">
+<div class="loader-class" *ngIf="isLoading">
    <app-loader-spinner></app-loader-spinner>
 </div>
 
-<div class="job-detail-wrapper">
+<div class="job-detail-wrapper" *ngIf="!isLoading">
   <div class="secondary-wrapper">
     <div class="tur-wrapper">
       <p><span>Jid:</span>  {{jgeneralDetail.jid}}</p>
@@ -52,9 +52,42 @@
 
 
 
-<div class="applicant-wrapper">
+<div class="applicant-wrapper" *ngIf="!isLoading">
+      <h1>All Applicants</h1>
+          <div class="check-box-wrap">
 
+            <input type="checkbox">
+            <label for="selection-mode">Selection Mode</label>
+          </div>
+        <div class="applicant-detail" *ngFor="let applicant of jobAllDetail.applicants; let i= index" role="button" (click)="makeSelected(i)">
+             <div class="applicant-name">
+                <span> {{i+1}}
+                  <i class="fas fa-check-square" *ngIf="isSelected(i)"></i></span>
+             </div>
+              <div class="applicant-name">
+                    {{applicant.name}}
+              </div>
+             <div class="applicant-name">
+               {{applicant.applicant}}
+             </div>
+        </div>
+           <div class="save-button">
+               <button class="save-btn-direct" (click)="saveSelected()"> Save Selection And Notify</button>
+           </div>
 </div>
+
+  <div class="applicant-wrapper" *ngIf="!isLoading">
+           <h1>Selected Students</h1>
+        <div class="applicant-detail" *ngFor="let applicant of jobAllDetail.selected">
+          <div class="applicant-name">
+            {{applicant.name}}
+          </div>
+          <div class="applicant-name">
+            {{applicant.applicant}}
+          </div>
+        </div>
+
+  </div>
 
 
 

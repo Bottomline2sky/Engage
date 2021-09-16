@@ -1,8 +1,8 @@
 
 
  export  class  JobSpecificModel {
-              applicants: {applicant: string}[];
-              selected:   { applicant: string }[];
+              applicants: {applicant: string , name: string} [];
+              selected:   { applicant: string, name: string }[];
                jid: string;
 }
 
